@@ -140,7 +140,9 @@ export default function Home() {
         headers['x-gemini-api-key'] = customApiKey;
       }
 
-      const response = await fetch('http://localhost:5000/api/extract-batch', {
+      const apiBaseUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000';
+
+      const response = await fetch(`${apiBaseUrl}/api/extract-batch`, {
         method: 'POST',
         headers,
         body: JSON.stringify({ records: batchRows }),
