@@ -1,0 +1,363 @@
+.container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* Metrics Grid */
+.metricsGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+@media (min-width: 640px) {
+  .metricsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .metricsGrid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.metricCard {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius);
+  box-shadow: var(--glass-shadow);
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.metricHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  opacity: 0.7;
+}
+
+.metricCard h3 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: hsl(var(--foreground));
+  margin: 0.25rem 0;
+}
+
+.metricFooter {
+  font-size: 0.75rem;
+  opacity: 0.5;
+}
+
+/* Theme accent colors for metric cards */
+.blueCard .metricIcon { color: #3b82f6; }
+.greenCard .metricIcon { color: #10b981; }
+.redCard .metricIcon { color: #f43f5e; }
+.purpleCard .metricIcon { color: hsl(var(--primary)); }
+
+.progressCircleContainer {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.rateValue {
+  font-weight: 600;
+  color: hsl(var(--primary));
+}
+
+.progressTrack {
+  width: 100%;
+  height: 6px;
+  background: hsl(var(--secondary));
+  border-radius: 3px;
+  overflow: hidden;
+  margin: 0.25rem 0;
+}
+
+.progressBar {
+  height: 100%;
+  background: hsl(var(--primary));
+  border-radius: 3px;
+  transition: width 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Table Card */
+.tableCard {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius);
+  box-shadow: var(--glass-shadow);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.tableCardHeader {
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid hsl(var(--border));
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+@media (min-width: 768px) {
+  .tableCardHeader {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+.tabs {
+  display: flex;
+  gap: 0.25rem;
+  background: hsl(var(--secondary));
+  padding: 0.25rem;
+  border-radius: 8px;
+  align-self: flex-start;
+}
+
+.tabBtn {
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  border: none;
+  background: transparent;
+  color: hsl(var(--foreground));
+  font-size: 0.8125rem;
+  font-weight: 500;
+  cursor: pointer;
+  opacity: 0.7;
+}
+
+.tabBtn:hover {
+  opacity: 1;
+}
+
+.activeTab {
+  background: hsl(var(--card));
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  opacity: 1;
+}
+
+.controls {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .controls {
+    width: auto;
+  }
+}
+
+.searchWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+  min-width: 180px;
+}
+
+.searchIcon {
+  position: absolute;
+  left: 0.75rem;
+  opacity: 0.4;
+  color: hsl(var(--foreground));
+}
+
+.searchInput {
+  width: 100%;
+  padding: 0.45rem 0.75rem 0.45rem 2.25rem;
+  border-radius: 6px;
+  border: 1px solid hsl(var(--border));
+  background: hsl(var(--card));
+  color: hsl(var(--foreground));
+  font-size: 0.8125rem;
+}
+
+.searchInput:focus {
+  outline: none;
+  border-color: hsl(var(--primary));
+}
+
+.exportBtn {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.45rem 0.85rem;
+  border-radius: 6px;
+  border: none;
+  background: hsl(var(--primary));
+  color: hsl(var(--primary-foreground));
+  font-size: 0.8125rem;
+  font-weight: 500;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.exportBtn:hover {
+  filter: brightness(1.08);
+}
+
+/* Table Design */
+.tableWrapper {
+  overflow-x: auto;
+  overflow-y: auto;
+  max-height: 450px;
+  width: 100%;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 0.8125rem;
+}
+
+.table th {
+  position: sticky;
+  top: 0;
+  background: hsl(var(--card));
+  z-index: 10;
+  font-weight: 600;
+  color: hsl(var(--foreground));
+  padding: 0.75rem 1rem;
+  border-bottom: 2px solid hsl(var(--border));
+  white-space: nowrap;
+  font-size: 0.7rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  box-shadow: 0 1px 0 hsl(var(--border));
+}
+
+.table td {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid hsl(var(--border));
+  white-space: nowrap;
+  color: hsl(var(--foreground));
+  opacity: 0.95;
+}
+
+.table tbody tr:hover {
+  background-color: hsla(250, 85%, 60%, 0.02);
+}
+
+/* Sticky Name Column */
+.stickyCol {
+  position: sticky;
+  left: 0;
+  background: hsl(var(--card));
+  z-index: 5;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.03);
+}
+
+.table tbody tr:hover .stickyCol {
+  background-color: hsla(250, 85%, 65%, 0.05);
+}
+
+.leadNameCell {
+  font-weight: 600;
+}
+
+/* Status Badges */
+.statusBadge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.15rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: capitalize;
+  white-space: nowrap;
+}
+
+.statusGood {
+  background-color: rgba(59, 130, 246, 0.1);
+  color: #3b82f6;
+}
+
+.statusSale {
+  background-color: rgba(16, 185, 129, 0.1);
+  color: #10b981;
+}
+
+.statusDNC {
+  background-color: rgba(245, 158, 11, 0.1);
+  color: #f59e0b;
+}
+
+.statusBad {
+  background-color: rgba(244, 63, 94, 0.1);
+  color: #f43f5e;
+}
+
+.notesCell, .descCell {
+  max-width: 200px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.emptyCell {
+  padding: 4rem 0;
+  text-align: center;
+  opacity: 0.5;
+}
+
+/* Skipped Alert */
+.skippedAlert {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.25rem;
+  background: hsla(38, 92%, 50%, 0.06);
+  border-bottom: 1px solid hsla(38, 92%, 50%, 0.15);
+  color: hsl(var(--warning));
+  font-size: 0.75rem;
+  line-height: 1.4;
+}
+
+.skippedAlert strong {
+  font-weight: 600;
+}
+
+.rowNumberCol {
+  width: 50px;
+  text-align: center;
+}
+
+.rowNumberCell {
+  text-align: center;
+  font-weight: 500;
+  opacity: 0.5;
+  border-right: 1px solid hsl(var(--border));
+}
+
+.codeCell {
+  font-family: monospace;
+  padding: 0.5rem 1rem !important;
+  vertical-align: top;
+}
+
+.codeCell pre {
+  margin: 0;
+  padding: 0.5rem;
+  background: hsl(var(--secondary));
+  border-radius: 6px;
+  overflow-x: auto;
+  max-width: 700px;
+  font-size: 0.75rem;
+  color: hsl(var(--foreground));
+  opacity: 0.85;
+}

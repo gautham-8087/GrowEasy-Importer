@@ -1,0 +1,5 @@
+"timestamp","Client Name","primary_email","mobile","company_name","city","state","country_name","source_name","possession"
+"2026-05-14 09:00:00","Amit Sharma","amit@sharma.com","+91 9123456789","Sharma Sweets","Jaipur","Rajasthan","India","varah_swamy","Ready to Move"
+"2026-05-14 09:15:00","Jessica Brown","jessica.b@browns.com","+1 555-0199","Brown Consulting","New York","NY","USA","leads_on_demand","6 months"
+"2026-05-14 09:30:00","Robert Lee","robert.lee@lee.com","+82 2-1234-5678","Lee Electronics","Seoul","Seoul","South Korea","eden_park","1 year"
+"2026-05-14 09:45:00","No Email and Phone","","","Invalid Corp","Mumbai","Maharashtra","India","sarjapur_plots","Ready"

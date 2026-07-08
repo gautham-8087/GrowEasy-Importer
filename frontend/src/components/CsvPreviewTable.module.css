@@ -1,0 +1,209 @@
+.card {
+  width: 100%;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius);
+  box-shadow: var(--glass-shadow);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  padding: 1.25rem 1.5rem;
+  border-bottom: 1px solid hsl(var(--border));
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+@media (min-width: 768px) {
+  .header {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+.titleInfo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.titleIcon {
+  color: hsl(var(--primary));
+}
+
+.titleInfo h4 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: hsl(var(--foreground));
+}
+
+.subtitle {
+  font-size: 0.75rem;
+  opacity: 0.55;
+}
+
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.searchWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-width: 200px;
+}
+
+.searchIcon {
+  position: absolute;
+  left: 0.75rem;
+  opacity: 0.4;
+  color: hsl(var(--foreground));
+}
+
+.searchInput {
+  width: 100%;
+  padding: 0.5rem 0.75rem 0.5rem 2.25rem;
+  border-radius: 6px;
+  border: 1px solid hsl(var(--border));
+  background: hsl(var(--card));
+  color: hsl(var(--foreground));
+  font-size: 0.8125rem;
+}
+
+.searchInput:focus {
+  outline: none;
+  border-color: hsl(var(--primary));
+}
+
+.pageSizeSelect {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.8125rem;
+  opacity: 0.8;
+}
+
+.select {
+  padding: 0.5rem 1.5rem 0.5rem 0.5rem;
+  border-radius: 6px;
+  border: 1px solid hsl(var(--border));
+  background: hsl(var(--card));
+  color: hsl(var(--foreground));
+  font-size: 0.8125rem;
+  cursor: pointer;
+  outline: none;
+}
+
+/* Table Wrapper for Horizontal and Vertical Scrolling */
+.tableWrapper {
+  overflow-x: auto;
+  overflow-y: auto;
+  max-height: 400px; /* limits preview height */
+  width: 100%;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 0.8125rem;
+}
+
+/* Sticky Headers */
+.table th {
+  position: sticky;
+  top: 0;
+  background: hsl(var(--card));
+  z-index: 10;
+  font-weight: 600;
+  color: hsl(var(--foreground));
+  padding: 0.75rem 1rem;
+  border-bottom: 2px solid hsl(var(--border));
+  white-space: nowrap;
+  text-transform: uppercase;
+  font-size: 0.7rem;
+  letter-spacing: 0.05em;
+  box-shadow: 0 1px 0 hsl(var(--border)); /* ensures clean border when scrolling */
+}
+
+.table td {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid hsl(var(--border));
+  white-space: nowrap;
+  max-width: 250px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: hsl(var(--foreground));
+  opacity: 0.9;
+}
+
+.table tbody tr:hover {
+  background-color: hsla(250, 85%, 60%, 0.02);
+}
+
+.rowNumberCol {
+  width: 50px;
+  text-align: center;
+}
+
+.rowNumberCell {
+  text-align: center;
+  font-weight: 500;
+  opacity: 0.5 !important;
+  border-right: 1px solid hsl(var(--border));
+}
+
+.emptyCell {
+  padding: 3rem 0;
+  text-align: center;
+  opacity: 0.5;
+}
+
+.footer {
+  padding: 1rem 1.5rem;
+  border-top: 1px solid hsl(var(--border));
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: hsl(var(--card));
+}
+
+.pageInfo {
+  font-size: 0.8125rem;
+  opacity: 0.6;
+}
+
+.paginationButtons {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.pageBtn {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.4rem 0.75rem;
+  border-radius: 6px;
+  border: 1px solid hsl(var(--border));
+  background: transparent;
+  color: hsl(var(--foreground));
+  font-size: 0.8125rem;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.pageBtn:hover:not(:disabled) {
+  background: hsl(var(--secondary));
+}
+
+.pageBtn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}

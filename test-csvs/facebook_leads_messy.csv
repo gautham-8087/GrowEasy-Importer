@@ -1,0 +1,8 @@
+"Creation Date","Full Name","e-mail","Phone No.","Organization","Remarks","source"
+"2026/05/13 14:20:48","John Doe","john.doe@example.com","+91 98765 43210","GrowEasy","reschedule demo please","leads_on_demand"
+"2026/05/13 14:25:30","Sarah Johnson","sarah.johnson@example.com","9876543211","Tech Solutions","busy right now. Call next week.","meridian_tower"
+"2026-05-13 14:30:15","Raj Patel","raj.patel@example.com","+919876543212","Startup Inc","Not interested","eden_park"
+"2026/05/13","Priya Singh","priya.singh@example.com, priya.work@example.com","9876543213, 9876543214","Enterprise Corp","deal closed! onboarding","sarjapur_plots"
+"2026-05-13","No Contact Info","","","No Contact LLC","This should be skipped because no email and no phone","varah_swamy"
+"2026-05-13 14:40:00","Only Email","only.email@example.com","","Email Co","No phone, should import successfully","eden_park"
+"2026-05-13 14:45:00","Only Mobile","","9876543219","Phone Co","No email, should import successfully","leads_on_demand"
