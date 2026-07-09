@@ -123,6 +123,6 @@ The system sends CSV records to the model using a strict system instruction set 
 
 ## 📝 Submission Guidelines
 - **Applied Position**: Software Developer Intern / Full-Time
-- **Hosted application URL**: [Insert hosted URL]
-- **GitHub repository URL**: [Insert repository URL]
-- **Email to**: `varun@groweasy.ai`
+- **Hosted application URL**: [https://frontend-tan-tau-58.vercel.app/]
+- **GitHub repository URL**: [https://github.com/gautham-8087/GrowEasy-Importer]
+
