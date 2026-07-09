@@ -75,14 +75,8 @@ app.post('/api/extract-batch', async (req, res) => {
       return res.json({ success: true, results: [] });
     }
 
-    // Get API Key from header or body, fallback to process.env.GEMINI_API_KEY
-    const apiKey = req.headers['x-gemini-api-key'] || req.body.apiKey || process.env.GEMINI_API_KEY;
-
-    if (!apiKey) {
-      return res.status(400).json({
-        error: 'Gemini API Key is missing. Please configure it in the .env file or UI Settings.'
-      });
-    }
+    // Get API Key from header or body, fallback to process.env.GEMINI_API_KEY. Default to 'mock_mode' if none is found.
+    const apiKey = req.headers['x-gemini-api-key'] || req.body.apiKey || process.env.GEMINI_API_KEY || 'mock_mode';
 
     const results = await extractCRMFieldsBatch(records, apiKey);
 
@@ -96,7 +90,11 @@ app.post('/api/extract-batch', async (req, res) => {
   }
 });
 
-// Start the server
-app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
-});
+// Start the server (only if not running in Vercel serverless environment)
+if (process.env.NODE_ENV !== 'production') {
+  app.listen(PORT, () => {
+    console.log(`Server is running on port ${PORT}`);
+  });
+}
+
+export default app;
